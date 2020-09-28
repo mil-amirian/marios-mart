@@ -19,7 +19,9 @@ class ProductList extends React.Component {
       .then(res => res.json())
       .then(products => {
         this.setState(state => ({
-          products: products
+          products: products,
+          productIdToView: null,
+          productToView: null
         }));
       });
   }
@@ -34,10 +36,12 @@ class ProductList extends React.Component {
               return (
                 <EachProduct
                   key={product.productId}
+                  id={product.productId}
                   image={product.image}
                   name={product.name}
                   price={product.price}
                   shortDescription={product.shortDescription}
+                  click={this.props.setView}
                 />
               );
             })

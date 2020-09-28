@@ -1,6 +1,6 @@
 import React from 'react';
 
-function EachProduct(props) {
+function EachProduct(props, key) {
   const cardStyle = {
     width: '20rem',
     height: '33rem'
@@ -17,7 +17,7 @@ function EachProduct(props) {
   };
 
   return (
-    <div className="card mt-4" style={cardStyle}>
+    <div className="card mt-4 shadow-lg p-3 mb-5 bg-white rounded" style={cardStyle} onClick={() => props.click(props.name, props.id)} id={props.id}>
       <div className="row" style={imageHolder}>
         <img src={props.image} className="card-img-top" alt="..." style={imageStyle}/>
       </div>

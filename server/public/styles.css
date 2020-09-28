@@ -16,9 +16,71 @@ main {
     margin-left: 0;
     height: 100vh;
     width: 100vw;
+}
 
+.card {
+    border-radius: 10px;
 }
 
 .price {
     color: gray;
+}
+h2 {
+    margin-left: 2rem;
+}
+
+.details-container {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.title-header {
+    width: 75vw;
+    height: 10vh;
+    margin-top: 2rem;
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+
+.product-details-container {
+    width: 75vw;
+    padding: 2rem;
+    height: auto;
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+
+.back-button {
+    color: gray;
+}
+.back-button:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.pic-price {
+    display: flex;
+}
+
+.image {
+    border-radius: 5px;
+    margin: 3rem 3rem 0 1rem;
+    max-width: 350px;
+    max-height: 350px;
+    object-fit: cover;
+}
+
+.name, .price, .short-desc {
+    margin-bottom: 1rem;
+}
+
+.name-price-details {
+    margin: 3rem 3rem 0 0;
+}
+
+.long-desc {
+    margin: 1.5rem 1rem;
 }

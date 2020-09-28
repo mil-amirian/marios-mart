@@ -4,8 +4,7 @@ class ProductDetails extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      product: this.props.id,
-      details: null
+      product: null
     };
     this.getProductDetails = this.getProductDetails.bind(this);
   }
@@ -15,17 +14,17 @@ class ProductDetails extends React.Component {
   }
 
   getProductDetails() {
-    fetch(`/api/products/${this.state.product}`)
+    fetch(`/api/products/${this.props.id}`)
       .then(res => res.json())
       .then(details => {
         this.setState(state => ({
-          details: details
+          product: details
         }));
       });
   }
 
   render() {
-    if (this.state.details) {
+    if (this.state.product) {
       return (
         <main className="row body-section">
           <div className="col-1"></div>
@@ -34,16 +33,16 @@ class ProductDetails extends React.Component {
               <h2>Wicked Sales</h2>
             </div>
             <div className="product-details-container shadow-lg p-3 mb-5 bg-white rounded">
-              <div className="back-button" onClick={this.props.setView}>&#60; Back to catalog</div>
+              <div className="back-button" onClick={() => this.props.setView('catalog', this.state.product.id)}>&#60; Back to catalog</div>
               <div className="pic-price">
-                <img className="image" src={this.state.details.image} alt="..."/>
+                <img className="image" src={this.state.product.image} />
                 <div className="name-price-details">
-                  <h3 className="name">{this.state.details.name}</h3>
-                  <div className="price">${(this.state.details.price / 100).toFixed(2)}</div>
-                  <div className="short-desc">{this.state.details.shortDescription}</div>
+                  <h3 className="name">{this.state.product.name}</h3>
+                  <div className="price">${(this.state.product.price / 100).toFixed(2)}</div>
+                  <div className="short-desc">{this.state.product.shortDescription}</div>
                 </div>
               </div>
-              <div className="long-desc">{this.state.details.longDescription}</div>
+              <div className="long-desc">{this.state.product.longDescription}</div>
             </div>
           </div>
           <div className="col-1"></div>

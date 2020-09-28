@@ -18,12 +18,8 @@ class ProductList extends React.Component {
     fetch('/api/products')
       .then(res => res.json())
       .then(products => {
-        const tempProdArr = products.slice();
-        tempProdArr.map(product => {
-          product.price = (product.price / 100).toFixed(2);
-        });
         this.setState(state => ({
-          products: tempProdArr
+          products: products
         }));
       });
   }

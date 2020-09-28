@@ -23,7 +23,9 @@ function EachProduct(props) {
       </div>
       <div className="card-body">
         <h4 className="card-title">{props.name}</h4>
-        <h6 className="price card-title">${props.price}</h6>
+        <h6 className="price card-title">
+            ${(props.price / 100).toFixed(2)}
+        </h6>
         <p className="card-text">{props.shortDescription}</p>
       </div>
     </div>

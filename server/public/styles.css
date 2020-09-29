@@ -1,5 +1,5 @@
 body {
-    background-color: gainsboro;
+    background-color: #f3f2ee;
 }
 
 .header {
@@ -20,6 +20,19 @@ main {
 
 .card {
     border-radius: 10px;
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+button {
+    transform: 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
 }
 
 .price {
@@ -83,4 +96,8 @@ h2 {
 
 .long-desc {
     margin: 1.5rem 1rem;
+}
+
+.cart-items {
+    color: whitesmoke;
 }

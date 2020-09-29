@@ -29,10 +29,10 @@ class ProductDetails extends React.Component {
         <main className="row body-section">
           <div className="col-1"></div>
           <div className="details-container col-10">
-            <div className="title-header d-flex align-items-center shadow-lg p-3 mb-5 bg-white rounded">
-              <h2>Wicked Sales</h2>
+            <div className="title-header d-flex align-items-center shadow-lg p-3 mb-2 bg-white rounded-bottom">
+              <h2>{this.state.product.name} from Wicked Sales</h2>
             </div>
-            <div className="product-details-container shadow-lg p-3 mb-5 bg-white rounded">
+            <div className="product-details-container shadow-lg p-3 mb-3 bg-white rounded-top">
               <div className="back-button" onClick={() => this.props.setView('catalog', this.state.product.id)}>&#60; Back to catalog</div>
               <div className="pic-price">
                 <img className="image" src={this.state.product.image} />
@@ -40,6 +40,9 @@ class ProductDetails extends React.Component {
                   <h3 className="name">{this.state.product.name}</h3>
                   <div className="price">${(this.state.product.price / 100).toFixed(2)}</div>
                   <div className="short-desc">{this.state.product.shortDescription}</div>
+                  <button className="btn btn-success" onClick={() => this.props.addToCart(this.state.product)}>
+                    Add To Cart
+                  </button>
                 </div>
               </div>
               <div className="long-desc">{this.state.product.longDescription}</div>

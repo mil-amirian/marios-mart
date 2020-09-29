@@ -84,3 +84,7 @@ h2 {
 .long-desc {
     margin: 1.5rem 1rem;
 }
+
+.cart-items {
+    color: whitesmoke;
+}

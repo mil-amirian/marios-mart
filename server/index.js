@@ -61,6 +61,118 @@ app.get('/api/products/:productId', (req, res, next) => {
     .catch(err => next(err));
 });
 
+app.get('/api/cart', (req, res, next) => {
+  if (req.session.cartId) {
+    const params = [req.session.cartId];
+    const sql =
+      `
+      select  "c"."cartItemId",
+              "c"."price",
+              "p"."productId",
+              "p"."image",
+              "p"."name",
+              "p"."shortDescription"
+      from "cartItems" as "c"
+      join "products" as "p" using ("productId")
+      where "c"."cartId" = $1
+      `;
+    db.query(sql, params)
+      .then(result => {
+        const cart = result.rows;
+        res.json(cart);
+      });
+  } else {
+    res.json([]);
+  }
+
+});
+
+app.post('/api/cart', (req, res, next) => {
+  const bodyRequest = parseInt(req.body.productId);
+  let values;
+  if (!bodyRequest || isNaN(bodyRequest)) {
+    return res.status(400).json({
+      error: 'Body must contain valid productId and be a positive integer'
+    });
+  } else {
+    values = [parseInt(req.body.productId)];
+  }
+  const sql = `
+      select *
+        from "products"
+        where "productId" = $1
+    `;
+  db.query(sql, values)
+    .then(result1 => {
+      if (result1.rows.length < 1) {
+        throw new ClientError('productId is not valid', 404);
+      } else {
+        const price = result1.rows[0].price;
+        if (req.session.cartId) {
+          const priceAndCartId = {
+            cartId: req.session.cartId,
+            price: price
+          };
+          return priceAndCartId;
+        } else {
+          const updateCarts =
+          `
+          insert into "carts" ("cartId", "createdAt")
+          values (default, default)
+          returning "cartId"
+          `;
+          return db.query(updateCarts)
+            .then(cartId => {
+              const priceAndCartId = {
+                cartId: cartId.rows[0].cartId,
+                price: price
+              };
+              return priceAndCartId;
+            });
+        }
+      }
+    })
+    .then(priceAndCartId => {
+      const cartId = priceAndCartId.cartId;
+      const price = priceAndCartId.price;
+      req.session.cartId = cartId;
+      const updateCartItems =
+        `
+          insert into "cartItems" ("cartId", "productId", "price")
+          values ($1, $2, $3)
+          returning "cartItemId"
+          `;
+      const params = [cartId, bodyRequest, price];
+
+      return db.query(updateCartItems, params)
+        .then(cartItemId => {
+          const params = [cartItemId.rows[0].cartItemId];
+          const getProductInfo =
+            `
+            select  "c"."cartItemId",
+                    "c"."price",
+                    "p"."productId",
+                    "p"."image",
+                    "p"."name",
+                    "p"."shortDescription"
+              from "cartItems" as "c"
+              join "products" as "p" using ("productId")
+            where "c"."cartItemId" = $1
+          `;
+          return db.query(getProductInfo, params)
+            .then(productInfo => {
+              res.status(201).send(productInfo.rows);
+            });
+        });
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({
+        error: 'An unexpected error occurred.'
+      });
+    });
+});
+
 app.use('/api', (req, res, next) => {
   next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
 });

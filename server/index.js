@@ -82,15 +82,7 @@ app.get('/api/cart', (req, res, next) => {
         res.json(cart);
       });
   } else {
-    const sql = `
-    select *
-      from "carts"
-  `;
-    db.query(sql)
-      .then(result => {
-        const cart = result.rows;
-        res.json(cart);
-      });
+    res.json([]);
   }
 
 });
@@ -112,12 +104,10 @@ app.post('/api/cart', (req, res, next) => {
     `;
   db.query(sql, values)
     .then(result1 => {
-      const price = result1.rows[0].price;
       if (result1.rows.length < 1) {
-        return res.status(400).json({
-          error: 'Cart is empty'
-        });
+        throw new ClientError('productId is not valid', 404);
       } else {
+        const price = result1.rows[0].price;
         if (req.session.cartId) {
           const priceAndCartId = {
             cartId: req.session.cartId,
@@ -154,7 +144,7 @@ app.post('/api/cart', (req, res, next) => {
           `;
       const params = [cartId, bodyRequest, price];
 
-      db.query(updateCartItems, params)
+      return db.query(updateCartItems, params)
         .then(cartItemId => {
           const params = [cartItemId.rows[0].cartItemId];
           const getProductInfo =

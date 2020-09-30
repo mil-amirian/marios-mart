@@ -9,7 +9,7 @@ function PageTitle(props) {
           <span className="title col align-self-center pt-2"><b>$ </b>{props.text}</span>
         </div>
 
-        <div className="col-2 d-flex align-items-center justify-content-center">
+        <div className="col-2 d-flex align-items-center justify-content-center" onClick={() => props.setView('cart', {})}>
           <div className="d-flex">
             <span className="cart-items mr-2">{props.cartItemCount}</span>
           </div>

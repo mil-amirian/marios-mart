@@ -58,6 +58,14 @@ h2 {
     border-radius: 10px;
 }
 
+.cart-title {
+    width: 75vw;
+    height: auto;
+    margin-top: 2rem;
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+
 .product-details-container {
     width: 75vw;
     padding: 2rem;
@@ -101,3 +109,18 @@ h2 {
 .cart-items {
     color: whitesmoke;
 }
+
+.product {
+    max-height: 350px;
+}
+
+.cart-image {
+    width: 150px;
+    margin-right: 2rem;
+}
+
+.cart-total {
+    font-size: 24px;
+    font-weight: 700;
+}
+

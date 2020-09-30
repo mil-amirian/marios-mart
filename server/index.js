@@ -194,6 +194,12 @@ app.post('/api/orders', (req, res, next) => {
     db.query(sql, params)
       .then(orderInfo => {
         res.status(201).json(orderInfo.rows[0]);
+      })
+      .catch(err => {
+        console.error(err);
+        res.status(500).json({
+          error: 'An unexpected error occurred.'
+        });
       });
   }
 });

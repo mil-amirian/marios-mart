@@ -144,7 +144,7 @@ export default class App extends React.Component {
       return (
         <div className="container-fluid">
           <PageTitle text="Wicked Sales" cartItemCount={this.updateCartCountForUser()} setView={this.setView}/>
-          <CheckoutForm setView={this.setView} price={this.calculateCartTotal()} order={this.placeOrder}/>
+          <CheckoutForm setView={this.setView} price={this.calculateCartTotal()} onSubmit={this.placeOrder}/>
         </div>
       );
     }

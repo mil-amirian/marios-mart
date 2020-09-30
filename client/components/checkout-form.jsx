@@ -4,24 +4,44 @@ export default class CheckoutForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: null,
-      creditCard: null,
-      shippingAddress: null
+      name: '',
+      creditCard: '',
+      shippingAddress: ''
     };
-    this.orderDetails = this.orderDetails.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  orderDetails() {
-    event.preventDefault();
-    const name = event.target[0].value;
-    const creditCard = event.target[1].value;
-    const address = event.target[2].value;
+  handleChange(event) {
+    const id = event.target.id;
+    if (id === 'name') {
+      this.setState({
+        name: event.target.value
+      });
+    } else if (id === 'creditCard') {
+      this.setState({
+        creditCard: event.target.value
+      });
+    } else if (id === 'address') {
+      this.setState({
+        shippingAddress: event.target.value
+      });
+    }
+  }
 
-    return {
-      name: name,
-      creditCard: creditCard,
-      shippingAddress: address
+  handleSubmit(event) {
+    event.preventDefault();
+    const orderDetails = {
+      name: this.state.name,
+      creditCard: this.state.creditCard,
+      shippingAddress: this.state.shippingAddress
     };
+    this.props.onSubmit(orderDetails);
+    this.setState(state => ({
+      name: '',
+      creditCard: '',
+      shippingAddress: ''
+    }));
 
   }
 
@@ -35,20 +55,20 @@ export default class CheckoutForm extends React.Component {
             <span className="checkout-total">Your Cart Total is <span className="badge badge-success">${((this.props.price) / 100).toFixed(2)}</span></span>
           </div>
           <div className="cart-title d-flex flex-column shadow-lg p-3 mb-1 bg-white rounded-bottom justify-content-center">
-            <form className="col-6 align-self-center m-5" onSubmit={() => { this.props.order(this.orderDetails()); }}>
+            <form className="col-6 align-self-center m-5" onSubmit={this.handleSubmit}>
               <div className="form-group">
-                <label htmlFor="exampleName1">Name</label>
-                <input type="text" className="form-control" id="exampleName1" aria-describedby="nameHelp" required/>
+                <label htmlFor="name">Name</label>
+                <input onChange={this.handleChange} type="text" className="form-control" id="name" aria-describedby="nameHelp" required/>
                 <small id="nameHelp" className="form-text text-muted">Please provide your full name.</small>
               </div>
               <div className="form-group">
                 <label htmlFor="creditCard">Credit Card</label>
-                <input type="number" className="form-control" id="creditCard" required/>
+                <input onChange={this.handleChange} type="number" className="form-control" id="creditCard" required/>
                 <small id="creditCardHelp" className="form-text text-muted">Please provide your credit card number.</small>
               </div>
               <div className="form-group">
-                <label htmlFor="addressInput">Shipping Address</label>
-                <textarea type="Textarea" className="form-control" id="addressInput" required/>
+                <label htmlFor="address">Shipping Address</label>
+                <textarea onChange={this.handleChange} type="Textarea" className="form-control" id="address" required/>
                 <small id="addressInputhelp" className="form-text text-muted">Please provide your full shipping address.</small>
               </div>
               <div className="d-flex justify-content-between">

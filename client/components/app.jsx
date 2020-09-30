@@ -3,6 +3,7 @@ import PageTitle from './header';
 import ProductList from './product-list';
 import ProductDetails from './product-page';
 import CartSummary from './cart-summary';
+import CheckoutForm from './checkout-form';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -20,6 +21,8 @@ export default class App extends React.Component {
     this.getCartItems = this.getCartItems.bind(this);
     this.addToCart = this.addToCart.bind(this);
     this.updateCartCountForUser = this.updateCartCountForUser.bind(this);
+    this.placeOrder = this.placeOrder.bind(this);
+    this.calculateCartTotal = this.calculateCartTotal.bind(this);
   }
 
   setView(name, params) {
@@ -39,6 +42,7 @@ export default class App extends React.Component {
           cart: this.state.cart.concat(cartItems)
         }));
       });
+
   }
 
   addToCart(product) {
@@ -76,6 +80,44 @@ export default class App extends React.Component {
     }
   }
 
+  placeOrder(order) {
+    const name = order.name;
+    const creditCard = order.creditCard;
+    const address = order.shippingAddress;
+
+    const postOptions = {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({
+        creditCard: creditCard,
+        name: name,
+        shippingAddress: address
+      })
+    };
+    fetch('/api/orders', postOptions)
+      .then(res => res.json())
+      .then(order => {
+        this.setState(state => ({
+          cart: [],
+          view: {
+            name: 'catalog',
+            params: {}
+          }
+        }));
+      });
+
+  }
+
+  calculateCartTotal() {
+    if (this.state.cart.length > 0) {
+      let cartTotal = 0;
+      for (let i = 0; i < this.state.cart.length; i++) {
+        cartTotal += this.state.cart[i].price;
+      }
+      return cartTotal;
+    }
+  }
+
   render() {
     if (this.state.view.name === 'catalog') {
       return (
@@ -98,7 +140,13 @@ export default class App extends React.Component {
           <CartSummary cartItems={this.state.cart} setView={this.setView} addToCart={this.addToCart} />
         </div>
       );
-
+    } else if (this.state.view.name === 'checkout') {
+      return (
+        <div className="container-fluid">
+          <PageTitle text="Wicked Sales" cartItemCount={this.updateCartCountForUser()} setView={this.setView}/>
+          <CheckoutForm setView={this.setView} price={this.calculateCartTotal()} onSubmit={this.placeOrder}/>
+        </div>
+      );
     }
 
   }

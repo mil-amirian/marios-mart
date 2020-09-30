@@ -19,7 +19,7 @@ export default function CartSummary(cartItems) {
             cartItems.cartItems.map(cartItem => {
               return (
                 <CartSummaryItem
-                  key={cartItem.productId}
+                  key={cartItem.cartItemId}
                   productId={cartItem.productId}
                   src={cartItem.image}
                   name={cartItem.name}
@@ -29,8 +29,9 @@ export default function CartSummary(cartItems) {
               );
             })
           }
-          <div className="cart-title d-flex flex-column shadow-lg p-3 mt-1 mb-5 bg-white justify-content-left rounded-top">
-            <span className="cart-total">Your Cart Total is ${(cartTotal / 100).toFixed(2)}</span>
+          <div className="cart-title d-flex shadow-lg p-3 mt-1 mb-5 bg-white justify-content-left rounded-top justify-content-between">
+            <span className="cart-total">Your Cart Total is ${(cartTotal / 100).toFixed(2)} </span>
+            <button className="btn btn-success" onClick={() => cartItems.setView('checkout', {})}>Place Order</button>
           </div>
         </div>
         <div className="col-1"></div>

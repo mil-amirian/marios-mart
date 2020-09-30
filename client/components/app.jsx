@@ -15,8 +15,7 @@ export default class App extends React.Component {
         name: 'catalog',
         params: {}
       },
-      cart: [],
-      cartTotal: 0
+      cart: []
     };
     this.setView = this.setView.bind(this);
     this.getCartItems = this.getCartItems.bind(this);
@@ -42,8 +41,6 @@ export default class App extends React.Component {
         this.setState(state => ({
           cart: this.state.cart.concat(cartItems)
         }));
-        this.calculateCartTotal();
-
       });
 
   }
@@ -117,9 +114,7 @@ export default class App extends React.Component {
       for (let i = 0; i < this.state.cart.length; i++) {
         cartTotal += this.state.cart[i].price;
       }
-      this.setState(state => ({
-        cartTotal: cartTotal
-      }));
+      return cartTotal;
     }
   }
 
@@ -146,20 +141,12 @@ export default class App extends React.Component {
         </div>
       );
     } else if (this.state.view.name === 'checkout') {
-      if (this.state.cartTotal > 0) {
-        return (
-          <div className="container-fluid">
-            <PageTitle text="Wicked Sales" cartItemCount={this.updateCartCountForUser()} setView={this.setView}/>
-            <CheckoutForm setView={this.setView} price={this.state.cartTotal} order={this.placeOrder}/>
-          </div>
-        );
-      } else {
-        return (
-          <h1>Loading checkout page ... </h1>
-
-        );
-      }
-
+      return (
+        <div className="container-fluid">
+          <PageTitle text="Wicked Sales" cartItemCount={this.updateCartCountForUser()} setView={this.setView}/>
+          <CheckoutForm setView={this.setView} price={this.calculateCartTotal()} order={this.placeOrder}/>
+        </div>
+      );
     }
 
   }

@@ -193,6 +193,7 @@ app.post('/api/orders', (req, res, next) => {
       `;
     db.query(sql, params)
       .then(orderInfo => {
+        delete req.session.cartId;
         res.status(201).json(orderInfo.rows[0]);
       })
       .catch(err => {

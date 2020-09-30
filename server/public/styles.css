@@ -124,3 +124,10 @@ h2 {
     font-weight: 700;
 }
 
+.checkout-total {
+    font-size: 18px;
+    font-weight: 550;
+    margin-left: 2rem;
+
+}
+

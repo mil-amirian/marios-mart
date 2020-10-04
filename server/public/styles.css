@@ -18,6 +18,7 @@ main {
     width: 100vw;
 }
 
+
 .card {
     border-radius: 10px;
     transition: 0.2s;
@@ -52,7 +53,7 @@ h2 {
 
 .title-header {
     width: 75vw;
-    height: 10vh;
+    height: auto;
     margin-top: 2rem;
     background-color: whitesmoke;
     border-radius: 10px;
@@ -89,9 +90,9 @@ h2 {
 .image {
     border-radius: 5px;
     margin: 3rem 3rem 0 1rem;
-    max-width: 350px;
-    max-height: 350px;
-    object-fit: cover;
+    max-width: 500px;
+    max-height: 500px;
+    object-fit: fill;
 }
 
 .name, .price, .short-desc {
@@ -115,8 +116,10 @@ h2 {
 }
 
 .cart-image {
-    width: 150px;
-    margin-right: 2rem;
+    /* margin: 3rem 3rem 0 1rem; */
+    max-width: 250px;
+    max-height: 250px;
+    object-fit: contain;
 }
 
 .cart-total {
@@ -128,6 +131,6 @@ h2 {
     font-size: 18px;
     font-weight: 550;
     margin-left: 2rem;
-
 }
+
 

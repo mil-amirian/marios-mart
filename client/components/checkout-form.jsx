@@ -48,14 +48,13 @@ export default class CheckoutForm extends React.Component {
   render() {
     return (
       <main className="row body-section">
-        <div className="col-1"></div>
-        <div className="details-container col-10">
+        <div className="details-container col">
           <div className="cart-title d-flex flex-column shadow-lg p-3 mb-1 bg-white rounded-bottom justify-content-left">
             <h2>Checkout</h2>
             <span className="checkout-total">Your Cart Total is <span className="badge badge-success">${((this.props.price) / 100).toFixed(2)}</span></span>
           </div>
           <div className="cart-title d-flex flex-column shadow-lg p-3 mb-1 bg-white rounded-bottom justify-content-center">
-            <form className="col-6 align-self-center m-5" onSubmit={this.handleSubmit}>
+            <form className="col align-self-center m-5" onSubmit={this.handleSubmit}>
               <div className="form-group">
                 <label htmlFor="name">Name</label>
                 <input onChange={this.handleChange} type="text" className="form-control" id="name" aria-describedby="nameHelp" required/>
@@ -79,7 +78,6 @@ export default class CheckoutForm extends React.Component {
             </form>
           </div>
         </div>
-        <div className="col-1"></div>
       </main>
     );
   }

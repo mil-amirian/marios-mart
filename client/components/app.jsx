@@ -122,28 +122,28 @@ export default class App extends React.Component {
     if (this.state.view.name === 'catalog') {
       return (
         <div className="container-fluid">
-          <PageTitle text="Wicked Sales" cartItemCount={this.updateCartCountForUser()} setView={this.setView}/>
+          <PageTitle text="Wicked Sales" cartItemCount={this.updateCartCountForUser()} setView={this.setView} returnHome={this.setView}/>
           <ProductList setView={this.setView}/>
         </div>
       );
     } else if (this.state.view.name === 'details') {
       return (
         <div className="container-fluid">
-          <PageTitle text="Wicked Sales" cartItemCount={this.updateCartCountForUser()} setView={this.setView}/>
+          <PageTitle text="Wicked Sales" cartItemCount={this.updateCartCountForUser()} setView={this.setView} returnHome={this.setView}/>
           <ProductDetails id={this.state.view.params.productId} setView={this.setView} addToCart={this.addToCart}/>
         </div>
       );
     } else if (this.state.view.name === 'cart') {
       return (
         <div className="container-fluid">
-          <PageTitle text="Wicked Sales" cartItemCount={this.updateCartCountForUser()} setView={this.setView}/>
+          <PageTitle text="Wicked Sales" cartItemCount={this.updateCartCountForUser()} setView={this.setView} returnHome={this.setView}/>
           <CartSummary cartItems={this.state.cart} setView={this.setView} addToCart={this.addToCart} />
         </div>
       );
     } else if (this.state.view.name === 'checkout') {
       return (
         <div className="container-fluid">
-          <PageTitle text="Wicked Sales" cartItemCount={this.updateCartCountForUser()} setView={this.setView}/>
+          <PageTitle text="Wicked Sales" cartItemCount={this.updateCartCountForUser()} setView={this.setView} returnHome={this.setView}/>
           <CheckoutForm setView={this.setView} price={this.calculateCartTotal()} onSubmit={this.placeOrder}/>
         </div>
       );

@@ -28,7 +28,7 @@ class ProductList extends React.Component {
     return (
       <main className="row body-section">
         <div className="col-1"></div>
-        <div className="cards-container col-10 d-flex justify-content-around flex-wrap">
+        <div className="cards-container col-10 d-flex justify-content-center flex-wrap">
           {
             this.state.products.map(product => {
               return (

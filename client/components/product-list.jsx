@@ -48,7 +48,6 @@ class ProductList extends React.Component {
               }
             </div>
           </div>
-
         </div>
         <div className="col-1 mb-5"></div>
       </main>

@@ -48,8 +48,7 @@ export default class CheckoutForm extends React.Component {
   render() {
     return (
       <main className="row body-section">
-        <div className="col-1"></div>
-        <div className="details-container col-10">
+        <div className="details-container col">
           <div className="cart-title d-flex flex-column shadow-lg p-3 mb-1 bg-white rounded-bottom justify-content-left">
             <h2>Checkout</h2>
             <span className="checkout-total">Your Cart Total is <span className="badge badge-success">${((this.props.price) / 100).toFixed(2)}</span></span>
@@ -79,11 +78,9 @@ export default class CheckoutForm extends React.Component {
                   Continue Shopping</span>
                 <button type="submit" className="btn btn-primary">Place Order</button>
               </div>
-
             </form>
           </div>
         </div>
-        <div className="col-1"></div>
       </main>
     );
   }

@@ -20,6 +20,7 @@ main {
     width: 100vw;
 }
 
+
 .card {
     border-radius: 10px;
     transition: 0.2s;
@@ -54,7 +55,7 @@ h2 {
 
 .title-header {
     width: 75vw;
-    height: 10vh;
+    height: auto;
     margin-top: 2rem;
     background-color: whitesmoke;
     border-radius: 10px;
@@ -96,7 +97,6 @@ h2 {
 .image {
     display: block;
     border-radius: 5px;
-    /* margin: 3rem 3rem 0 0rem; */
     max-width: 70%;
     object-fit: cover;
 }
@@ -120,7 +120,6 @@ h2 {
 .cart-image {
     display: block;
     border-radius: 5px;
-    /* margin: 3rem 3rem 0 0rem; */
     max-width: 20vw;
     max-height: 20vh;
     object-fit: cover;
@@ -144,4 +143,5 @@ h2 {
 .cont-shop {
     font-size: 16px;
 }
+
 

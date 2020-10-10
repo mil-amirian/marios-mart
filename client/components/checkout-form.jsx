@@ -54,7 +54,7 @@ export default class CheckoutForm extends React.Component {
             <span className="checkout-total">Your Cart Total is <span className="badge badge-success">${((this.props.price) / 100).toFixed(2)}</span></span>
           </div>
           <div className="cart-title d-flex flex-column shadow-lg p-3 mb-1 bg-white rounded-bottom justify-content-center">
-            <form className="col align-self-center m-5" onSubmit={this.handleSubmit}>
+            <form className="col-9 align-self-center m-5" onSubmit={this.handleSubmit}>
               <div className="form-group">
                 <label htmlFor="name">Name</label>
                 <input onChange={this.handleChange} type="text" className="form-control" id="name" aria-describedby="nameHelp" required/>
@@ -71,10 +71,13 @@ export default class CheckoutForm extends React.Component {
                 <small id="addressInputhelp" className="form-text text-muted">Please provide your full shipping address.</small>
               </div>
               <div className="d-flex justify-content-between">
-                <div className="back-button ml-1 mt-4" onClick={() => { this.props.setView('catalog', {}); }}>&#60; Continue Shopping</div>
+                <span className="back-button cont-shop ml-1 mt-4" onClick={() => { this.props.setView('catalog', {}); }}>
+                  <svg width="1em" height="1em" viewBox="0 0 16 16" className="mr-2 bi bi-arrow-left-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fillRule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm9.5 8.5a.5.5 0 0 0 0-1H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5z"/>
+                  </svg>
+                  Continue Shopping</span>
                 <button type="submit" className="btn btn-primary">Place Order</button>
               </div>
-
             </form>
           </div>
         </div>

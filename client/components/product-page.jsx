@@ -42,7 +42,6 @@ class ProductDetails extends React.Component {
                 <div className="col-lg">
                   <img className="row image mx-auto d-block mb-4 mt-4" src={this.state.product.image} />
                 </div>
-
                 <div className="col-lg name-price-details ml-2">
                   <h3 className="row name">{this.state.product.name}</h3>
                   <div className="row price">${(this.state.product.price / 100).toFixed(2)}</div>
@@ -62,9 +61,7 @@ class ProductDetails extends React.Component {
       return (
         <h1>Loading</h1>
       );
-
     }
-
   }
 }
 

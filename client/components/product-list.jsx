@@ -28,24 +28,29 @@ class ProductList extends React.Component {
     return (
       <main className="row body-section">
         <div className="col-1"></div>
-        <div className="cards-container col-10 d-flex justify-content-around flex-wrap">
-          {
-            this.state.products.map(product => {
-              return (
-                <EachProduct
-                  key={product.productId}
-                  id={product.productId}
-                  image={product.image}
-                  name={product.name}
-                  price={product.price}
-                  shortDescription={product.shortDescription}
-                  click={this.props.setView}
-                />
-              );
-            })
-          }
+        <div className="col-md-12">
+          <div className="d-flex align-items-center justify-content-center">
+            <div className="col-10 d-flex flex-wrap justify-content-center">
+              {
+                this.state.products.map(product => {
+                  return (
+                    <EachProduct
+                      key={product.productId}
+                      id={product.productId}
+                      image={product.image}
+                      name={product.name}
+                      price={product.price}
+                      shortDescription={product.shortDescription}
+                      click={this.props.setView}
+                    />
+                  );
+                })
+              }
+            </div>
+          </div>
+
         </div>
-        <div className="col-1"></div>
+        <div className="col-1 mb-5"></div>
       </main>
     );
   }

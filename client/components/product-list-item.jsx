@@ -17,9 +17,9 @@ function EachProduct(props, key) {
   };
 
   return (
-    <div className="card mt-4 shadow-lg p-3 mb-5 bg-white" style={cardStyle} onClick={() => props.click('details', props.id)} id={props.id}>
+    <div className="card mt-4 shadow-lg p-3 m-2 bg-white" style={cardStyle} onClick={() => props.click('details', props.id)} id={props.id}>
       <div className="row" style={imageHolder}>
-        <img src={props.image} className="card-img-top" style={imageStyle}/>
+        <img src={props.image} className="card-img-top row image mx-auto d-block" style={imageStyle}/>
       </div>
       <div className="card-body">
         <h4 className="card-title">{props.name}</h4>

@@ -10,6 +10,8 @@ body {
 
 .title {
     color: gainsboro;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
 }
 
 main {
@@ -58,6 +60,11 @@ h2 {
     border-radius: 10px;
 }
 
+.page-header {
+    font-size: 24px;
+    font-weight: 600;
+}
+
 .cart-title {
     width: 75vw;
     height: auto;
@@ -69,7 +76,7 @@ h2 {
 .product-details-container {
     width: 75vw;
     padding: 2rem;
-    height: auto;
+    height: fit-content;
     background-color: whitesmoke;
     border-radius: 10px;
 }
@@ -82,24 +89,20 @@ h2 {
     cursor: pointer;
 }
 
-.pic-price {
-    display: flex;
+.bk-btn-txt {
+    font-size: 16px;
 }
 
 .image {
+    display: block;
     border-radius: 5px;
-    margin: 3rem 3rem 0 1rem;
-    max-width: 350px;
-    max-height: 350px;
+    /* margin: 3rem 3rem 0 0rem; */
+    max-width: 70%;
     object-fit: cover;
 }
 
 .name, .price, .short-desc {
-    margin-bottom: 1rem;
-}
-
-.name-price-details {
-    margin: 3rem 3rem 0 0;
+    margin-bottom: 0.75rem;
 }
 
 .long-desc {
@@ -109,18 +112,26 @@ h2 {
 .cart-items {
     color: whitesmoke;
 }
-
-.product {
-    max-height: 350px;
+.cart-header {
+    font-size: 24px;
+    font-weight: 600;
 }
 
 .cart-image {
-    width: 150px;
-    margin-right: 2rem;
+    display: block;
+    border-radius: 5px;
+    /* margin: 3rem 3rem 0 0rem; */
+    max-width: 20vw;
+    max-height: 20vh;
+    object-fit: cover;
+}
+
+.cart-title {
+    font-size: 24px;
 }
 
 .cart-total {
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 700;
 }
 
@@ -128,6 +139,9 @@ h2 {
     font-size: 18px;
     font-weight: 550;
     margin-left: 2rem;
+}
 
+.cont-shop {
+    font-size: 16px;
 }
 

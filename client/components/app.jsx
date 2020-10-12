@@ -118,31 +118,32 @@ export default class App extends React.Component {
   }
 
   render() {
+    const header = <PageTitle text="Mario's Mart" cartItemCount={this.updateCartCountForUser()} setView={this.setView} returnHome={this.setView}/>;
     if (this.state.view.name === 'catalog') {
       return (
         <div className="container-fluid">
-          <PageTitle text="Mario's Mart" cartItemCount={this.updateCartCountForUser()} setView={this.setView} returnHome={this.setView}/>
+          {header}
           <ProductList setView={this.setView}/>
         </div>
       );
     } else if (this.state.view.name === 'details') {
       return (
         <div className="container-fluid">
-          <PageTitle text="Wicked Sales" cartItemCount={this.updateCartCountForUser()} setView={this.setView} returnHome={this.setView}/>
+          {header}
           <ProductDetails id={this.state.view.params.productId} setView={this.setView} addToCart={this.addToCart}/>
         </div>
       );
     } else if (this.state.view.name === 'cart') {
       return (
         <div className="container-fluid">
-          <PageTitle text="Wicked Sales" cartItemCount={this.updateCartCountForUser()} setView={this.setView} returnHome={this.setView}/>
+          {header}
           <CartSummary cartItems={this.state.cart} setView={this.setView} addToCart={this.addToCart} />
         </div>
       );
     } else if (this.state.view.name === 'checkout') {
       return (
         <div className="container-fluid">
-          <PageTitle text="Wicked Sales" cartItemCount={this.updateCartCountForUser()} setView={this.setView} returnHome={this.setView}/>
+          {header}
           <CheckoutForm setView={this.setView} price={this.calculateCartTotal()} onSubmit={this.placeOrder}/>
         </div>
       );

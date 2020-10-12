@@ -30,7 +30,7 @@ class ProductList extends React.Component {
         <div className="col-1"></div>
         <div className="col-md-12">
           <div className="d-flex align-items-center justify-content-center">
-            <div className="col-10 d-flex flex-wrap justify-content-left">
+            <div className="col-9 d-flex flex-wrap justify-content-left">
               {
                 this.state.products.map(product => {
                   return (

@@ -1,17 +1,20 @@
 body {
-    background-color: #f3f2ee;
+    background-color: #C0C0CC;
 }
 
 .header {
     width: 100vw;
-    background-color: #343a40;
+    background-color: #E71911;
     height: 50px;
+    border-bottom: solid 4px #E9E7E2;
+    box-shadow: 0 8px 6px -6px #e7e7e7;
+
 }
 
 .title {
-    color: gainsboro;
+    color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 main {
@@ -82,10 +85,10 @@ h2 {
 }
 
 .back-button {
-    color: gray;
+    color: black;
 }
 .back-button:hover {
-    color: black;
+    color: #E71911;
     cursor: pointer;
 }
 
@@ -110,6 +113,7 @@ h2 {
 
 .cart-items {
     color: whitesmoke;
+    font-weight: 600;
 }
 .cart-header {
     font-size: 24px;
@@ -141,6 +145,10 @@ h2 {
 
 .cont-shop {
     font-size: 16px;
+}
+
+.buy-button {
+    background-color: #E71911;
 }
 
 

@@ -121,7 +121,7 @@ export default class App extends React.Component {
     if (this.state.view.name === 'catalog') {
       return (
         <div className="container-fluid">
-          <PageTitle text="Wicked Sales" cartItemCount={this.updateCartCountForUser()} setView={this.setView} returnHome={this.setView}/>
+          <PageTitle text="Mario's Mart" cartItemCount={this.updateCartCountForUser()} setView={this.setView} returnHome={this.setView}/>
           <ProductList setView={this.setView}/>
         </div>
       );

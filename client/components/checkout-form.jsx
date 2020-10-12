@@ -75,7 +75,7 @@ export default class CheckoutForm extends React.Component {
                     <path fillRule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm9.5 8.5a.5.5 0 0 0 0-1H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5z"/>
                   </svg>
                   Continue Shopping</span>
-                <button type="submit" className="btn btn-primary">Place Order</button>
+                <button type="submit" className="btn btn-primary">ORDER</button>
               </div>
             </form>
           </div>

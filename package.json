@@ -1,5 +1,5 @@
 {
-  "name": "wicked-sales-js-solution",
+  "name": "marios-mart-solution",
   "version": "1.0.0",
   "description": "Reference implemenation of a Node.js &amp; React shopping cart app.",
   "main": "server/index.js",
@@ -116,13 +116,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mil-amirian/wicked-sales-js.git"
+    "url": "git+https://github.com/mil-amirian/marios-mart.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mil-amirian/wicked-sales-js/issues"
+    "url": "https://github.com/mil-amirian/marios-mart/issues"
   },
-  "homepage": "https://github.com/mil-amirian/wicked-sales-js#readme"
+  "homepage": "https://github.com/mil-amirian/marios-mart#readme"
 }

@@ -27,8 +27,8 @@ class ProductDetails extends React.Component {
     if (this.state.product) {
       return (
         <main className="row body-section">
-          <div className="col-1"></div>
-          <div className="details-container col-10">
+          {/* <div className="col-1"></div> */}
+          <div className="details-container col">
             <div className="title-header d-flex align-items-center shadow-lg p-3 mb-2 bg-white rounded-bottom">
               <span className="page-header ml-1">Wicked Sales</span>
             </div>
@@ -54,7 +54,7 @@ class ProductDetails extends React.Component {
               <div className="mt-4 mb-4 ml-4 mr-3 long-desc">{this.state.product.longDescription}</div>
             </div>
           </div>
-          <div className="col-1"></div>
+          {/* <div className="col-1"></div> */}
         </main>
       );
     } else {

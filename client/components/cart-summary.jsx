@@ -47,7 +47,7 @@ export default function CartSummary(cartItems) {
             })
           }
           <div className="cart-title d-flex shadow-lg p-3 mt-1 mb-5 bg-white justify-content-left rounded-top justify-content-between">
-            <span className="cart-total">Your Cart Total is ${(cartTotal / 100).toFixed(2)} </span>
+            <span className="cart-total align-middle mr-3">Your Cart Total is ${(cartTotal / 100).toFixed(2)} </span>
             < CheckoutBtn />
           </div>
         </div>

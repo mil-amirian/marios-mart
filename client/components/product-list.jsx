@@ -27,10 +27,10 @@ class ProductList extends React.Component {
   render() {
     return (
       <main className="row body-section">
-        <div className="col-1"></div>
-        <div className="col-md-12">
+        {/* <div className="col-lg-1"></div> */}
+        <div className="details-container col">
           <div className="d-flex align-items-center justify-content-center">
-            <div className="col-9 d-flex flex-wrap justify-content-left">
+            <div className="d-flex flex-wrap justify-content-center">
               {
                 this.state.products.map(product => {
                   return (
@@ -49,7 +49,7 @@ class ProductList extends React.Component {
             </div>
           </div>
         </div>
-        <div className="col-1 mb-5"></div>
+        {/* <div className="col-lg-1 mb-5"></div> */}
       </main>
     );
   }

@@ -1,5 +1,6 @@
 body {
     background-color: #C0C0CC;
+    overflow-x: hidden;
 }
 
 .header {
@@ -15,6 +16,7 @@ body {
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 20px;
+    cursor: pointer;
 }
 
 main {
@@ -26,6 +28,7 @@ main {
 .card {
     border-radius: 10px;
     transition: 0.2s;
+    cursor: pointer;
 }
 
 .card:hover {
@@ -34,6 +37,7 @@ main {
 
 button {
     transform: 0.2s;
+    cursor: pointer;
 }
 
 button:hover {
@@ -74,6 +78,16 @@ h2 {
     margin-top: 2rem;
     background-color: whitesmoke;
     border-radius: 10px;
+    font-size: 24px;
+}
+
+.checkout {
+    width: 75vw;
+    height: auto;
+    margin-top: 0.1rem;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    font-size: 24px;
 }
 
 .product-details-container {
@@ -114,7 +128,13 @@ h2 {
 .cart-items {
     color: whitesmoke;
     font-weight: 600;
+    cursor: pointer;
 }
+
+.cart-icon {
+    cursor: pointer;
+}
+
 .cart-header {
     font-size: 24px;
     font-weight: 600;
@@ -129,7 +149,6 @@ h2 {
 }
 
 .cart-title {
-    font-size: 24px;
 }
 
 .cart-total {
@@ -183,3 +202,11 @@ h2 {
 .accept-button {
     width: 85px;
 }
+
+/* .container-fluid {
+    /* padding-right: 15px;
+    padding-left: 15px; */
+    margin-right: auto;
+    margin-left: auto
+} */
+

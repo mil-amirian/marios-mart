@@ -158,7 +158,7 @@ export default class App extends React.Component {
             <h1 className="text-center modal-title">
           Disclaimer
             </h1>
-            <p className="disclaimer text-center">This site is intended for demonstration purposes only. No purchases can be made on this site.</p>
+            <p className="disclaimer text-center mr-5 ml-5">This site is intended for demonstration purposes only. No purchases can be made on this site.</p>
             <p className="disclaimer text-center">Please click &apos;Enter&apos; to proceed</p>
             <div>
               <button className="accept-button btn btn-warning" onClick={() => { this.setView('catalog', null); }}>Enter</button>

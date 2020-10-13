@@ -52,8 +52,11 @@ export default class CheckoutForm extends React.Component {
             <h2>Checkout</h2>
             <span className="checkout-total">Your Cart Total is <span className="badge badge-success">${((this.props.price) / 100).toFixed(2)}</span></span>
           </div>
-          <div className="cart-title d-flex flex-column shadow-lg p-3 mb-1 bg-white rounded-bottom justify-content-center">
-            <form className="col-9 align-self-center m-5" onSubmit={this.handleSubmit}>
+          <div className="cart-title d-flex flex-column shadow-lg p-3 mb-1 bg-white rounded-bottom">
+            <form className="col align-self-center m-5" onSubmit={this.handleSubmit}>
+              <div className="col disc-title d-flex shadow-sm mb-5 bg-gold justify-content-center flex-wrap">
+                <span className="modal-title text-center">This site is for demonstration purposes only - please DO NOT enter any personal information</span>
+              </div>
               <div className="form-group">
                 <label htmlFor="name">Name</label>
                 <input onChange={this.handleChange} type="text" className="form-control" id="name" aria-describedby="nameHelp" required/>

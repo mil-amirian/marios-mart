@@ -12,7 +12,7 @@ export default class App extends React.Component {
       message: null,
       isLoading: true,
       view: {
-        name: 'catalog',
+        name: 'disclaimer',
         params: {}
       },
       cart: []
@@ -146,6 +146,25 @@ export default class App extends React.Component {
           {header}
           <CheckoutForm setView={this.setView} price={this.calculateCartTotal()} onSubmit={this.placeOrder}/>
         </div>
+      );
+    } else if (this.state.view.name === 'disclaimer') {
+      return (
+        <>
+          <div className="container-fluid">
+            {header}
+            <ProductList/>
+          </div>
+          <div className="modal-container">
+            <h1 className="text-center modal-title">
+          Disclaimer
+            </h1>
+            <p className="disclaimer text-center">This site is intended for demonstration purposes only. No purchases can be made on this site.</p>
+            <p className="disclaimer text-center">Please click &apos;Enter&apos; to proceed</p>
+            <div>
+              <button className="accept-button btn btn-warning" onClick={() => { this.setView('catalog', null); }}>Enter</button>
+            </div>
+          </div>
+        </>
       );
     }
 

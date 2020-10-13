@@ -28,6 +28,10 @@ Try the application live at [https://marios-mart.milamirian.com/](https://marios
 ## Preview
 
 ![Screen Shot 2020-10-13 at 3 23 57 PM](https://user-images.githubusercontent.com/62856013/95922946-41b46280-0d69-11eb-9b91-6761960befe9.png)
+![Screen Shot 2020-10-13 at 3 59 52 PM](https://user-images.githubusercontent.com/62856013/95924865-42e78e80-0d6d-11eb-8856-2e56ab575789.png)
+![Screen Shot 2020-10-13 at 4 00 14 PM](https://user-images.githubusercontent.com/62856013/95924868-43802500-0d6d-11eb-8773-03970a6437c2.png)
+![Screen Shot 2020-10-13 at 4 00 37 PM](https://user-images.githubusercontent.com/62856013/95924871-4418bb80-0d6d-11eb-8bd0-730f7aa2140d.png)
+
 
 ## Development
 

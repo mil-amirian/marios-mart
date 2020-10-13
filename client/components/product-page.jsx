@@ -30,7 +30,7 @@ class ProductDetails extends React.Component {
           {/* <div className="col-1"></div> */}
           <div className="details-container col">
             <div className="title-header d-flex align-items-center shadow-lg p-3 mb-2 bg-white rounded-bottom">
-              <span className="page-header ml-1">Wicked Sales</span>
+              <span className="page-header ml-1">Mario&apos;s Mart</span>
             </div>
             <div className="product-details-container shadow-lg p-3 mb-3 bg-white rounded-top">
               <span className="back-button" onClick={() => this.props.setView('catalog', this.state.product.id)}>

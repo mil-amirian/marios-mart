@@ -3,10 +3,23 @@ import CartSummaryItem from './cart-summary-item';
 
 export default function CartSummary(cartItems) {
   let cartTotal = 0;
+
   for (let i = 0; i < cartItems.cartItems.length; i++) {
     cartTotal += cartItems.cartItems[i].price;
   }
   if (cartItems.cartItems) {
+    const CheckoutBtn = () => {
+      if (cartItems.cartItems.length > 0) {
+        return (
+          <button className="btn btn-success" onClick={() => cartItems.setView('checkout', {})}>CHECKOUT</button>
+        );
+      } else {
+        return (
+          <button className="btn btn-success" onClick={() => cartItems.setView('checkout', {})} disabled>CHECKOUT</button>
+
+        );
+      }
+    };
     return (
       <main className="row body-section">
         <div className="col-1"></div>
@@ -35,7 +48,7 @@ export default function CartSummary(cartItems) {
           }
           <div className="cart-title d-flex shadow-lg p-3 mt-1 mb-5 bg-white justify-content-left rounded-top justify-content-between">
             <span className="cart-total">Your Cart Total is ${(cartTotal / 100).toFixed(2)} </span>
-            <button className="btn btn-success" onClick={() => cartItems.setView('checkout', {})}>CHECKOUT</button>
+            < CheckoutBtn />
           </div>
         </div>
         <div className="col-1"></div>

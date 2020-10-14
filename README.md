@@ -1,4 +1,4 @@
-# Marios's Mart
+# Mario's Mart
 
 A full stack Node.js and React shopping cart app. Developed to be responsive for both mobile and desktop access.
 

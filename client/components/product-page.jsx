@@ -46,7 +46,11 @@ class ProductDetails extends React.Component {
                   <h3 className="row name">{this.state.product.name}</h3>
                   <div className="row price">${(this.state.product.price / 100).toFixed(2)}</div>
                   <div className="row short-desc">{this.state.product.shortDescription}</div>
-                  <button className="row btn btn-danger buy-button mb-3 mt-4" onClick={() => this.props.addToCart(this.state.product)}>
+                  <button className="row btn btn-danger buy-button mb-3 mt-4" onClick={() => {
+                    this.props.addToCart(this.state.product);
+                    this.props.setView('atcConfirm', null);
+                  }
+                  }>
                     Add To Cart
                   </button>
                 </div>

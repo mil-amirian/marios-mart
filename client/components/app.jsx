@@ -120,10 +120,32 @@ export default class App extends React.Component {
   render() {
     const header = <PageTitle text="Mario's Mart" cartItemCount={this.updateCartCountForUser()} setView={this.setView} returnHome={this.setView} />;
 
+    const addToCartOptions = () => {
+      return (
+        <div className="modal-container-atc">
+          <div className="d-flex flex-column align-items-center atc-outer">
+            <div className="d-flex flex-column align-items-center atc-inner">
+              <h1 className="text-center modal-title-atc">
+          Great choice!
+              </h1>
+              <p className="disclaimer-atc text-center mr-2 ml-2">Awesome pick! Would you like to see your cart or go back to the store for more awesome stuff?</p>
+              <div>
+                <div className="atc-btns">
+                  <button className="store-btn btn btn-danger m-2" onClick={() => { this.setView('catalog', null); }}>Store</button>
+                  <button className="store-btn btn btn-success m-2" onClick={() => { this.setView('cart', null); }}>Cart</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      );
+    };
+
     const paralaxHeader = () => {
       return (
         <div className="row paralax mb-5 d-flex justify-content-left">
-          <h3 className='paralax-title'>Welcome to Mario&apos;s Mart</h3>
+          <h3 className='paralax-title'>Welcome to <br/> Mario&apos;s Mart</h3>
         </div>
       );
     };
@@ -175,6 +197,16 @@ export default class App extends React.Component {
               <button className="accept-button btn btn-warning" onClick={() => { this.setView('catalog', null); }}>Enter</button>
             </div>
           </div>
+        </>
+      );
+    } else if (this.state.view.name === 'atcConfirm') {
+      return (
+        <>
+          <div className="container-fluid">
+            {header}
+            <ProductDetails id={this.state.view.params.productId} setView={this.setView} addToCart={this.addToCart}/>
+          </div>
+          {addToCartOptions()}
         </>
       );
     }

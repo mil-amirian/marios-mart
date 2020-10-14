@@ -118,12 +118,22 @@ export default class App extends React.Component {
   }
 
   render() {
-    const header = <PageTitle text="Mario's Mart" cartItemCount={this.updateCartCountForUser()} setView={this.setView} returnHome={this.setView}/>;
+    const header = <PageTitle text="Mario's Mart" cartItemCount={this.updateCartCountForUser()} setView={this.setView} returnHome={this.setView} />;
+
+    const paralaxHeader = () => {
+      return (
+        <div className="row paralax mb-5 d-flex justify-content-left">
+          <h3 className='paralax-title'>Welcome to Mario&apos;s Mart</h3>
+        </div>
+      );
+    };
+
     if (this.state.view.name === 'catalog') {
       return (
-        <div className="container-fluid">
+        <div className="container-fluid d-flex flex-column">
           {header}
-          <ProductList setView={this.setView}/>
+          {paralaxHeader()}
+          <ProductList setView={this.setView} />
         </div>
       );
     } else if (this.state.view.name === 'details') {
@@ -152,6 +162,7 @@ export default class App extends React.Component {
         <>
           <div className="container-fluid">
             {header}
+            {paralaxHeader()}
             <ProductList/>
           </div>
           <div className="modal-container">

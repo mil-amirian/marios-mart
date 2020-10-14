@@ -5,8 +5,8 @@ function PageTitle(props) {
     <header className="row">
       <div className="header d-flex align-items-center justify-content-between">
         <div className="col-1"></div>
-        <div className="col-6">
-          <span className="title col align-self-center pt-2" onClick={() => props.setView('catalog', {})}>{props.text}</span>
+        <div className="col-6 mt-3 mb-2">
+          <span className="title col align-self-center" onClick={() => props.setView('catalog', {})}>{props.text}</span>
         </div>
         <div className="col-4 d-flex align-items-center justify-content-end" onClick={() => props.setView('cart', {})}>
           <div className="d-flex">

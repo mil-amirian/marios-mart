@@ -37,7 +37,7 @@ Try the application live at [https://marios-mart.milamirian.com/](https://marios
 
 #### System Requirements
 
-- NPM 6 or higher
+- npm 6 or higher
 - Postgresql 10 or higher
 
 #### Getting Started

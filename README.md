@@ -7,7 +7,7 @@ A full stack Node.js and React shopping cart app. Developed to be responsive for
 - React.js
 - Node
 - Express
-- Postgresql
+- PostgreSQL
 - HTML5
 - CSS3
 - PM2
@@ -66,7 +66,7 @@ Try the application live at [https://marios-mart.milamirian.com/](https://marios
     1. Name the cloned file to `.env`
     1. Edit the `.env` to provide your credentials
 
-5. Import the example database to Postgresql located in `database/dump.sql`.
+5. Import the example database to PostgreSQL located in `database/dump.sql`.
 
 
 6. Run the custom express server.

@@ -302,19 +302,28 @@ h2 {
 
 @media (max-width: 768px) {
     .paralax-title {
-        font-size: 25px;
+        font-size: 20px;
         width: 60vw;
+        margin-top: 4rem;
+        background-color: rgb(255, 255, 255);
+        color: black;
         box-shadow:
-        0 0 60px 15px #fff,
-        0 0 100px 30px #f0f,
-        0 0 140px 45px #0ff;
+        0 0 30px 15px #fff,
+        0 0 50px 30px #f0f,
+        0 0 70px 35px #0ff;
+        text-shadow: none;
+        border: solid 2px #AFAFAF;
+
     }
 
     .paralax {
-        /* min-height: 0vh; */
+        background-image: none;
+        min-height: fit-content;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        border-bottom: none;
+        box-shadow: none;
     }
 
     .header {

@@ -317,13 +317,13 @@ h2 {
     }
 
     .paralax {
-        background-image: none;
+        /* background-image: none;
         min-height: fit-content;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         border-bottom: none;
-        box-shadow: none;
+        box-shadow: none; */
     }
 
     .header {

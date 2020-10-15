@@ -1,4 +1,4 @@
-# Marios's Mart
+# Mario's Mart
 
 A full stack Node.js and React shopping cart app. Developed to be responsive for both mobile and desktop access.
 
@@ -7,7 +7,7 @@ A full stack Node.js and React shopping cart app. Developed to be responsive for
 - React.js
 - Node
 - Express
-- Postgresql
+- PostgreSQL
 - HTML5
 - CSS3
 - PM2
@@ -27,10 +27,11 @@ Try the application live at [https://marios-mart.milamirian.com/](https://marios
 
 ## Preview
 
-![Screen Shot 2020-10-13 at 3 23 57 PM](https://user-images.githubusercontent.com/62856013/95922946-41b46280-0d69-11eb-9b91-6761960befe9.png)
-![Screen Shot 2020-10-13 at 4 07 37 PM](https://user-images.githubusercontent.com/62856013/95925299-4c252b00-0d6e-11eb-9baf-882339a3b1f3.png)
-![Screen Shot 2020-10-13 at 4 00 14 PM](https://user-images.githubusercontent.com/62856013/95925302-4deeee80-0d6e-11eb-9045-bed9ca78f9f3.png)
-![Screen Shot 2020-10-13 at 4 00 37 PM](https://user-images.githubusercontent.com/62856013/95925304-4f201b80-0d6e-11eb-86c5-29fdf08e22ae.png)
+![marios-mart-gh](https://user-images.githubusercontent.com/62856013/96052554-aa1b4680-0e32-11eb-861c-56f072f4db6a.png)
+![Screen Shot 2020-10-14 at 3 32 48 PM](https://user-images.githubusercontent.com/62856013/96052562-ac7da080-0e32-11eb-99c3-879198fe3733.png)
+![Screen Shot 2020-10-14 at 3 32 57 PM](https://user-images.githubusercontent.com/62856013/96052567-af789100-0e32-11eb-92cf-519c8abdcbf3.png)
+![Screen Shot 2020-10-14 at 3 33 12 PM](https://user-images.githubusercontent.com/62856013/96052572-b1daeb00-0e32-11eb-8c37-13d4d0868921.png)
+![Screen Shot 2020-10-14 at 3 33 25 PM](https://user-images.githubusercontent.com/62856013/96052577-b56e7200-0e32-11eb-9781-feec09287492.png)
 
 
 ## Development
@@ -65,7 +66,7 @@ Try the application live at [https://marios-mart.milamirian.com/](https://marios
     1. Name the cloned file to `.env`
     1. Edit the `.env` to provide your credentials
 
-5. Import the example database to Postgresql located in `database/dump.sql`.
+5. Import the example database to PostgreSQL located in `database/dump.sql`.
 
 
 6. Run the custom express server.

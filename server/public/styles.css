@@ -311,7 +311,10 @@ h2 {
     }
 
     .paralax {
-        min-height: 80vh;
+        /* min-height: 0vh; */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     .header {

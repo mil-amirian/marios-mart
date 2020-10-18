@@ -1,6 +1,6 @@
 # Mario's Mart
 
-A full stack Node.js and React shopping cart app. Developed to be responsive for both mobile and desktop access.
+A full stack Nintendo-themed Node.js and React shopping cart app. Developed to be responsive for both mobile and desktop access.
 
 ## Technologies Used
 
